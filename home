@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>home</title>
+</head>
+<body>
+	<div class="container">
+		<div class="column">
+			<h2>Column 1</h2>
+			<div class="content">
+				<h>yeah</h>
+			</div>
+		</div>
+		<div class="column">
+			<h2>Column 2</h2>
+			<div class="content">
+				<p>More content for column 2 goes here.</p>
+				<p>Even more content for column 2 goes here.</p>
+				<p>And so on...</p>
+				<p>Content for column 2 goes here.</p>
+				<p>More content for column 2 goes here.</p>
+				<p>Even more content for column 2 goes here.</p>
+				<p>And so on...</p>
+				<p>Content for column 2 goes here.</p>
+				<p>More content for column 2 goes here.</p>
+				<p>Even more content for column 2 goes here.</p>
+				<p>And so on...</p>
+				<p>Content for column 2 goes here.</p>
+				<p>More content for column 2 goes here.</p>
+				<p>Even more content for column 2 goes here.</p>
+				<p>And so on...</p>
+				<p>Content for column 2 goes here.</p>
+				<p>More content for column 2 goes here.</p>
+				<p>Even more content for column 2 goes here.</p>
+				<p>And so on...</p>
+			</div>
+		</div>
+	</div>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.column {
+			width: 50%;
+			box-sizing: border-box;
+			padding: 10px;
+			background-color: #f2f2f2;
+			font-size: 20px;
+			text-align: center;
+			overflow-y: auto;
+		}
+
+		.content {
+			height: 100%;
+		}
+	</style>
+</body>
+</html>
+
+
