@@ -103,7 +103,8 @@ footer {
         border-right: 10px solid transparent;
         border-top: 10px solid black;
         cursor: pointer;
-		  vertical-align: bottom;
+        vertical-align: bottom;
+	padding: 10px;
       }
       
       .icon.open {
