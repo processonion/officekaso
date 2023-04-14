@@ -115,7 +115,7 @@ footer {
   padding-right: 30px;
   border: 0px solid gray;
   text-align: left;
-  max-width: 100%;
+  max-width: 800px;
   box-sizing: border-box;
   word-break:break-all; 
 }
