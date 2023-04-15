@@ -16,17 +16,21 @@
      <div class="scrollablecontent1">
      
 	     <!0>
-		  <div class="questions">COULD I WATER MY PLANTS ANYWHERE AT HOME?<div class="icon"></div>
-		  <div class="explanation">
-       식물이 매일매일 조금씩 달라지는 모습을 보는 것은 즐겁습니다.
+<div class="question-container">
+  <div class="questions">COULD I WATER MY PLANTS ANYWHERE AT HOME?</div>
+  <div class="explanation">
+    식물이 매일매일 조금씩 달라지는 모습을 보는 것은 즐겁습니다.
        때론 무심해지기도 하지만 바람에 흔들리고 햇빛을 맞는 모습을 보거나 물을 주면서 잘 자라기를 바라는 
        마음을 갖는 순간은 평화롭고 건강한 느낌이 듭니다. 한편 집에서 물을 주는 공간은 제한적입니다. 
        물론 물이 넘치는 것을 방지하기 위해서 물받이 받침대가 있긴 하지만 시원치 않습니다. 
        어디서든 물을 시원하게 줄 수 있다면, 심지어 아침에 일어나 바로 옆의 화분에 호스를 키고 
        물을 줄 수 있다면 상쾌하지 않을까요?
-		  </div></div>
+  </div>
+</div>
+
 		  <!1>
-        <div class="questions">COULD THERE BE A FUNCTIONAL HOUSE WITH A SIZE OF A BED?<div class="icon"></div>
+<div class="question-container">        
+<div class="questions">COULD THERE BE A FUNCTIONAL HOUSE WITH A SIZE OF A BED?</div>
 		  <div class="explanation">
         하루종일 트위터를 하는 삶을 상상합니다. 누워서 핸드폰으로 세상을 봅니다.
 화장실을 가거나 음식을 만들어 먹기 위해 최소한으로 움직입니다.
@@ -34,7 +38,8 @@
 4면의 벽에 온갖 가구와 설비가 설치되어 있습니다. 하루종일 침대에서 뒹굴대며 어떤 간섭 없이 핸드폰을 할 수 있습니다.
 		  </div></div>
 		  <!2>
-        <div class="questions">IS IT POSSIBLE TO CONSIDER MICRO ECOSYSTEM WHILE MAKING ARCHITECTURE?<div class="icon"></div>
+        <div class="question-container">
+<div class="questions">IS IT POSSIBLE TO CONSIDER MICRO ECOSYSTEM WHILE MAKING ARCHITECTURE?</div>
 		  <div class="explanation">
 폭력과 파괴에 대해 생각합니다. 폭력은 의도성이 있다고 합니다. 
 한편 건물을 지을 때 필연적으로 기존의 땅을 파괴하게 됩니다. 폭력을 의도하진 않지만 
@@ -45,12 +50,14 @@
 폭력적인 건축은 피할 수 없는 것 일까요?
 		  </div></div>
 		  <!3>
-		  <div class="questions">HOW DO I COEXIST WITH WILD ANIMALS AT HOME?<div class="icon"></div>
+		  <div class="question-container">
+		<div class="questions">HOW DO I COEXIST WITH WILD ANIMALS AT HOME?</div>
 		  <div class="explanation">
         in progress
 		  </div></div>
 		  <!4>
-		<div class="questions">I WANT A HOUSE WHERE FURNITURES HAVE NO LEGS<div class="icon"></div>
+		<div class="question-container">
+		<div class="questions">I WANT A HOUSE WHERE FURNITURES HAVE NO LEGS</div>
 		  <div class="explanation">
        "가구가 다 떠있는 집을 원해요."
 청소기로 청소를 하다보면 침대 속, 책상의 다리, 의자의 다리 때문에 청소하기가 불편하다고 생각했었습니다. 
@@ -58,22 +65,25 @@
 새끼발까락을 가구 모서리에 자주 찧었던 경험을 기억하기도 하고, 강아지나 고양이가 가구 아래로 마음껏 뛰어다니는 모습을 상상하면서 떠있는 가구의 집을 디자인 했습니다. 
 		  </div></div>
 		<!5>
-		<div class="questions">WHEN I WAKE UP, THE FIRST THING I DO IS CHECKING MY PLANTS IN MY 'GREENROOM'<div class="icon"></div>
+		<div class="question-container">
+		<div class="questions">WHEN I WAKE UP, THE FIRST THING I DO IS CHECKING MY PLANTS IN MY 'GREENROOM'</div>
 		  <div class="explanation">
         in progress
 		  </div></div>
 		<!6>
-			<div class="questions">WHEN I GET OUT OF BED, I WANT TO FEEL SOFTNESS OF GRASS<div class="icon"></div>
+		<div class="question-container">
+			<div class="questions">WHEN I GET OUT OF BED, I WANT TO FEEL SOFTNESS OF GRASS</div>
 		  <div class="explanation">
         in progress
 		  </div></div>
 		<!7>
-		  <div class="questions">HOME SWEET HOME; WHAT IS A GOOD HOUSE?WHAT IS A GOOD LIFE?<div class="icon"></div>
+		<div class="question-container">
+		  <div class="questions">HOME SWEET HOME; WHAT IS A GOOD HOUSE?WHAT IS A GOOD LIFE?</div>
 		  <div class="explanation">
         in progress
 		  </div></div>
       </div>
-      </div>
+</div>
 
 <div class="section section2">
   <div class="scrollablecontent2">
@@ -97,37 +107,59 @@
   </body>
 
 <script>
-const icons = document.querySelectorAll('.icon');
-const explanations = document.querySelectorAll('.explanation');
+const questionContainers = document.querySelectorAll('.question-container');
 
-icons.forEach((icon, index) => {
-  icon.addEventListener('click', () => {
-    explanations[index].classList.toggle('open');
-    icon.classList.toggle('open');
+questionContainers.forEach((container, index) => {
+  const explanation = container.querySelector('.explanation');
+
+  container.addEventListener('click', () => {
+    // Close any other open explanations
+    questionContainers.forEach((otherContainer, i) => {
+      if (i !== index) {
+        const otherExplanation = otherContainer.querySelector('.explanation');
+        otherExplanation.classList.remove('open');
+      }
+    });
+
+    explanation.classList.toggle('open');
 
     const section2 = document.querySelector('.section2 .scrollablecontent2');
     let imagesToSort;
-    if (icon.classList.contains('open')) {
-      if (index === 0) { // for the first icon
+    const allImages = section2.querySelectorAll('img');
+
+    if (explanation.classList.contains('open')) {
+      if (index === 0) {
         imagesToSort = Array.from(section2.querySelectorAll('img[alt="greenroomhouse"]'));
-      } else if (index === 1) { // for the second icon
+      } else if (index === 1) {
         imagesToSort = Array.from(section2.querySelectorAll('img[alt="jeju01"]'));
-      } else if (index === 2) { // for the third icon
+      } else if (index === 2) {
         imagesToSort = Array.from(section2.querySelectorAll('img[alt="birdwatching01"],img[alt="shinheung02"]'));
-      } else if (index === 3) { // for the forth icon
+      } else if (index === 3) {
         imagesToSort = Array.from(section2.querySelectorAll('img[alt="apartment01"]'));
       }
 
+      // Fade out non-relevant images
+      allImages.forEach(img => {
+        if (!imagesToSort.includes(img)) {
+          img.classList.add('fade-out');
+        }
+      });
+
       Array.from(imagesToSort).forEach(img => section2.prepend(img));
-      // Scroll to the top of section2
       section2.scrollTo({top: 0, behavior: 'smooth'});
     } else {
-      // Revert the images back to their original alignment
+      // Remove fade-out from all images
+      allImages.forEach(img => {
+        img.classList.remove('fade-out');
+      });
+
       imagesToSort = section2.querySelectorAll('img');
       Array.from(imagesToSort).sort((a, b) => a.src.localeCompare(b.src)).forEach(img => section2.appendChild(img));
     }
   });
 });
+
+
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -139,7 +171,7 @@ function shuffle(array) {
 
 // Get all the questions/explanations and shuffle their order
 const section1 = document.querySelector('.section1 .scrollablecontent1');
-const questions = Array.from(section1.querySelectorAll('.questions'));
+const questions = Array.from(section1.querySelectorAll('.question-container'));
 shuffle(questions);
 
 // Remove the existing questions/explanations and add them back in shuffled order
@@ -171,5 +203,3 @@ window.addEventListener('click', function(event) {
 </script>
 
 </html>
-
-
