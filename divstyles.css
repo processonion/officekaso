@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #F6F1E9
 }
 
 body {
@@ -16,14 +17,6 @@ div {
    margin-bottom: 30px;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-}
-
 .head {
   text-align:left;
   height: 0px;
@@ -31,11 +24,34 @@ footer {
   z-index:1;
 }
 
+.question-container {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
+  position: relative;
+}
+
+.question-container:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 10px solid black;
+  border-top: 10px solid transparent;
+}
+
+
 .questions {
   background-color: white;
   font-size:24px;
   text-align: left;
   margin-left: 30px;
+  margin-bottom: 0px;
+  cursor: pointer;
 }
 
 .sections {
@@ -69,7 +85,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   margin-top:20px;
-  margin-bottom: 20px;
+  height:100%;
 }
 
 .section2 img {
@@ -89,29 +105,10 @@ footer {
   margin-top: 50px; /* set the margin-top to the height of the footer */
 }
 .scrollablecontent2 {
-  max-height: calc(100% - 50px); /* subtract the height of the footer */
+  max-height: 100%; /* calc(100% - 50px) subtract the height of the footer */
   overflow: auto;
 }
-      
-      .icon {
-        display: inline-block;
-        width: 0;
-        height: 0;
-		  margin-left:10px;
-		  margin-bottom:5px;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid black;
-        cursor: pointer;
-        vertical-align: bottom;
-	padding: 0px;
-      }
-      
-      .icon.open {
-        border-top: none;
-        border-bottom: 10px solid black;
-      }
-  
+        
           .explanation {
   display: none;
   padding-left: 30px;
@@ -122,12 +119,12 @@ footer {
   box-sizing: border-box;
   word-break:break-all; 
 }
-
  
       .explanation.open {
         display: block;
 	font-size:20px;
       }
+
 
 .modal {
   display: none;
