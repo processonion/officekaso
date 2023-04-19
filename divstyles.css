@@ -108,7 +108,10 @@ div {
 }
 
 .explanation {
-  display: none;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+
   padding-left: 30px;
   padding-top: 30px;
   border: 0px solid gray;
@@ -116,11 +119,14 @@ div {
   max-width: 90%;
   box-sizing: border-box;
   word-break: break-all;
+  transition: all 0.7s ease-in-out;
+  font-size: 20px;
 }
 
 .explanation.open {
-  display: block;
-  font-size: 20px;
+  /* display: block; */
+  max-height: 100vw;
+  /* auto 불가능 */
 }
 
 .modal {
