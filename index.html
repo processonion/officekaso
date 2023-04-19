@@ -88,7 +88,7 @@
 <div class="section section2">
   <div class="scrollablecontent2">
     <img id="home-image" src="home01.GIF" alt="home image">
-    <img src="p_16_01_shinheung_01.JPG" alt="p.16.01.01">
+    <img id="second-image" src="p_16_01_shinheung_01.JPG" alt="p.16.01.01">
     <img src="p_16_02_shinheung_02.JPG" alt="shinheung02">     
     <img src="p_23_01_birdwatching_01.png" alt="birdwatching01">
     <img src="p_22_01_greenroomhouse_01.png" alt="greenroomhouse">
@@ -102,6 +102,13 @@
   <div class="modal-content">
     <img src="home01.GIF" alt="home image">
     <span class="close">&times;</span>
+  </div>
+</div>
+
+<div class="modal_second" id="modal_second">
+  <div class="modal_second-content">
+    <img src="p_16_01_shinheung_01.JPG" alt="second image">
+    <span class="close_second">&times;</span>
   </div>
 </div>
   </body>
@@ -183,6 +190,12 @@ const modal = document.getElementById('modal');
 const modalContent = document.querySelector('.modal-content');
 const closeBtn = document.querySelector('.close');
 
+
+const secondImage = document.getElementById('second-image');
+const modal_second = document.getElementById('modal_second');
+const modal_second_content = document.querySelector('.modal_second-content');
+const closeBtn_second = document.querySelector('.close_second');
+
 // Add event listener to home image
 homeImage.addEventListener('click', function() {
   modal.style.display = 'block';
@@ -200,6 +213,27 @@ window.addEventListener('click', function(event) {
     modal.style.display = 'none';
   }
 });
+
+
+// Add event listener to home image
+secondImage.addEventListener('click', function() {
+  modal_second.style.display = 'block';
+  modal_second_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+});
+
+// Add event listener to close button
+closeBtn_second.addEventListener('click', function() {
+  modal_second.style.display = 'none';
+});
+
+// Add event listener to close modal when clicking outside of the modal content
+window.addEventListener('click', function(event) {
+  if (event.target == modal_second) {
+    modal_second.style.display = 'none';
+  }
+});
+
+
 </script>
 
 </html>
