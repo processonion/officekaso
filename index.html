@@ -9,11 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
-
+    <div class="head"> OFFICE KASO </div>
 	 <div class="sections">
      <div class="section section1">
-	 <div class="head"> OFFICE KASO </div>
-     <div class="scrollablecontent1">
+	      <div class="scrollablecontent1">
      
 	     <!0>
 <div class="question-container">
@@ -87,30 +86,25 @@
 
 <div class="section section2">
   <div class="scrollablecontent2">
-    <img id="home-image" src="home01.GIF" alt="home image">
-    <img id="second-image" src="p_16_01_shinheung_01.JPG" alt="p.16.01.01">
-    <img src="p_16_02_shinheung_02.JPG" alt="shinheung02">     
-    <img src="p_23_01_birdwatching_01.png" alt="birdwatching01">
-    <img src="p_22_01_greenroomhouse_01.png" alt="greenroomhouse">
-    <img src="p_22_02_jeju_01.png" alt="jeju01">
-    <img src="p_22_03_apartment_01.png" alt="apartment01">
+    <a href="#" class="modal-trigger" data-image="p_22_04_sunwha-dong house_01.png,p_15_02.JPG" data-text="content,content2"><img id="home-image" src="home01.GIF" alt="home image">
+<a href="#" class="modal-trigger" data-image="p_15_04.JPG,p_15_02.JPG" data-text="content,content2"><img src="p_16_01_shinheung_01.JPG" alt="p.16.01.01">
+   <a href="#" class="modal-trigger" data-image="p_15_05.JPG,p_15_02.JPG" data-text="content,content2ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"><img src="p_16_02_shinheung_02.JPG" alt="shinheung02">     
+    <a href="#" class="modal-trigger" data-image="p_22_04_sunwha-dong house_01.png,p_15_02.JPG" data-text="content,content2"><img src="p_23_01_birdwatching_01.png" alt="birdwatching01">
+    <a href="#" class="modal-trigger" data-image="p_22_04_sunwha-dong house_01.png,p_15_02.JPG" data-text="content,content2"><img src="p_22_01_greenroomhouse_01.png" alt="greenroomhouse">
+    <a href="#" class="modal-trigger" data-image="p_22_04_sunwha-dong house_01.png,p_15_02.JPG" data-text="content,content2"><img src="p_22_02_jeju_01.png" alt="jeju01">
+    <a href="#" class="modal-trigger" data-image="p_22_04_sunwha-dong house_01.png,p_15_02.JPG" data-text="content,content2"><img src="p_22_03_apartment_01.png" alt="apartment01">
   </div>
 </div>
 
 <!-- Modal box -->
-<div class="modal" id="modal">
+<!--<div class="modal" id="modal">
   <div class="modal-content">
-    <img src="home01.GIF" alt="home image">
-    <span class="close">&times;</span>
+오피스카소는 한국을 기반으로 하는 디자인—리서치 오피스입니다. 우리는 평범한, 매일의 삶에 의문을 가지고 디자인합니다. 무심하게 지나쳤던 주변의 생명들, 사물들, 풍경과 환경에 관심을 가지고 인식하여 좀 더 세밀하게 주변과 관계맺을 수 있는 방식을 고민합니다.
+<br>
+<br>
+Office Kaso is a design research office based in South Korea. We question and design the ordinary aspects of everyday life. We are interested in observing and discovering all life forms, things, scenery, and environments around us, and we try to think delicately about how to coexist with them.
   </div>
-</div>
-
-<div class="modal_second" id="modal_second">
-  <div class="modal_second-content">
-    <img src="p_16_01_shinheung_01.JPG" alt="second image">
-    <span class="close_second">&times;</span>
-  </div>
-</div>
+</div>-->
   </body>
 
 <script>
@@ -166,8 +160,6 @@ questionContainers.forEach((container, index) => {
   });
 });
 
-
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -185,55 +177,103 @@ shuffle(questions);
 questions.forEach(q => section1.removeChild(q));
 questions.forEach(q => section1.appendChild(q));
 
-const homeImage = document.getElementById('home-image');
-const modal = document.getElementById('modal');
-const modalContent = document.querySelector('.modal-content');
-const closeBtn = document.querySelector('.close');
 
+//modal
+const modalTriggerElems = document.querySelectorAll('.modal-trigger');
 
-const secondImage = document.getElementById('second-image');
-const modal_second = document.getElementById('modal_second');
-const modal_second_content = document.querySelector('.modal_second-content');
-const closeBtn_second = document.querySelector('.close_second');
+modalTriggerElems.forEach((modalTriggerElem) => {
+  const imagePaths = modalTriggerElem.dataset.image.split(',');
+  const modalTexts = modalTriggerElem.dataset.text.split(',');
 
-// Add event listener to home image
-homeImage.addEventListener('click', function() {
-  modal.style.display = 'block';
-  modalContent.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+  modalTriggerElem.addEventListener('click', event => {
+    event.preventDefault(); // prevent the anchor tag from navigating to a new page
+
+    const modalElem = document.createElement('div');
+    modalElem.classList.add('modal');
+    modalElem.innerHTML = `
+      <div class="modal-content">
+        <div class="modal-body">
+          <span class="prev">&lt;</span>
+          <span class="next">&gt;</span>
+          <span class="close">&times;</span>
+          <div class="modal-image">
+            <img src="${imagePaths[0]}">
+          </div>
+          <div class="modal-text">${modalTexts[0]}</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modalElem);
+    modalElem.style.display = 'block';
+
+    // Add event listeners to next/previous icons
+    const modalContent = modalElem.querySelector('.modal-content');
+    const modalBodyElem = modalElem.querySelector('.modal-body');
+    const prevElem = modalBodyElem.querySelector('.prev');
+    const nextElem = modalBodyElem.querySelector('.next');
+    const images = imagePaths.map((path) => {
+      const img = new Image();
+      img.src = path;
+      return img;
+    });
+
+    let currentImageIndex = 0;
+
+    prevElem.addEventListener('click', event => {
+      currentImageIndex--;
+      if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      }
+      showImage(currentImageIndex);
+    });
+
+    nextElem.addEventListener('click', event => {
+      currentImageIndex++;
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+      showImage(currentImageIndex);
+    });
+
+    function showImage(index) {
+      modalBodyElem.querySelector('.modal-image').innerHTML = '';
+      modalBodyElem.querySelector('.modal-image').appendChild(images[index]);
+      modalBodyElem.querySelector('.modal-text').innerHTML = modalTexts[index];
+    }
+
+    const closeBtn = modalContent.querySelector('.close');
+
+    closeBtn.addEventListener('click', function() {
+      modalElem.style.display = 'none';
+    });
+
+    // Add event listener to close modal when clicking outside of the modal content
+    window.addEventListener('click', function(event) {
+      if (event.target == modalElem) {
+        modalElem.style.display = 'none';
+      }
+    });
+
+    // Set modal height to 80% of window height
+    modalContent.style.height = window.innerHeight * 0.8 + 'px';
+
+    // Position previous and next buttons in center-left and center-right of modal body
+    prevElem.style.left = '20px';
+    nextElem.style.right = '20px';
+    prevElem.style.top = nextElem.style.top = '50%';
+    prevElem.style.transform = nextElem.style.transform = 'translateY(-50%)';
+  });
 });
 
-// Add event listener to close button
-closeBtn.addEventListener('click', function() {
-  modal.style.display = 'none';
+const images = imagePaths.map((path) => {
+  const img = new Image();
+  img.classList.add('max-height'); // add max-height class to the image
+  img.src = path;
+  return img;
 });
-
-// Add event listener to close modal when clicking outside of the modal content
-window.addEventListener('click', function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-});
-
-
-// Add event listener to home image
-secondImage.addEventListener('click', function() {
-  modal_second.style.display = 'block';
-  modal_second_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
-});
-
-// Add event listener to close button
-closeBtn_second.addEventListener('click', function() {
-  modal_second.style.display = 'none';
-});
-
-// Add event listener to close modal when clicking outside of the modal content
-window.addEventListener('click', function(event) {
-  if (event.target == modal_second) {
-    modal_second.style.display = 'none';
-  }
-});
-
 
 </script>
 
 </html>
+
+
