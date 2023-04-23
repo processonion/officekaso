@@ -22,36 +22,8 @@ div {
     text-align: left;
     height: 0px;
     font-size: 30px;
+    margin-left: 10px;
     z-index: 1;
-}
-
-.question-container {
-    margin-bottom: 20px;
-    margin-right: 10px;
-    position: relative;
-    background-color: white;
-    border: 1px solid black;
-    position: relative;
-}
-
-.question-container:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-right: 10px solid black;
-    border-top: 10px solid transparent;
-}
-
-.questions {
-    background-color: white;
-    font-size: 24px;
-    text-align: left;
-    margin-left: 30px;
-    margin-bottom: 0px;
-    cursor: pointer;
 }
 
 .sections {
@@ -102,7 +74,7 @@ div {
     max-height: calc(100% - 50px);
     /* subtract the height of the footer */
     overflow: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     /* set the margin-top to the height of the footer */
 }
 
@@ -112,12 +84,43 @@ div {
     overflow: auto;
 }
 
+.question-container {
+    
+    margin-right: 10px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    margin-bottom: -20px;
+}
+
+.question-container:before {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-right: 10px solid black;
+    border-top: 10px solid transparent;
+}
+
+.questions {
+    background-color: white;
+    font-size: 24px;
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: -20px;
+    cursor: pointer;
+    /*border: 1px solid red;*/
+}
+
 .explanation {
     /* display: none; */
     max-height: 0;
     overflow: hidden;
     padding-left: 30px;
-    padding-top: 30px;
+    margin-top: 30px;
     border: 0px solid gray;
     text-align: center;
     max-width: 90%;
