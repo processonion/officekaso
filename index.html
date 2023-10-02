@@ -81,38 +81,70 @@
 
         <div class="section section2">
             <div class="scrollablecontent2">
-                <img id="home-image" src="home01.GIF" alt="home image">
-                <img id="second-image" src="p_16_01_shinheung_01.JPG" alt="p.16.01.01">
-                <img src="p_16_02_shinheung_02.JPG" alt="shinheung02">
-                <img src="p_23_01_birdwatching_01.png" alt="birdwatching01">
-                <img src="p_22_01_greenroomhouse_01.png" alt="greenroomhouse">
-                <img src="p_22_02_jeju_01.png" alt="jeju01">
-                <img src="p_22_03_apartment_01.png" alt="apartment01">
+                <img id="image01" src="home01.GIF" alt="image01">
+                <img id="image02" src="p_16_01_shinheung_01.JPG" alt="image02">
+                <img id="image03"src="p_16_02_shinheung_02.JPG" alt="image03">
+                <img id="image04"src="p_23_01_birdwatching_01.png" alt="image04">
+                <img id="image05"src="p_22_01_greenroomhouse_01.png" alt="image05">
+                <img id="image06"src="p_22_02_jeju_01.png" alt="image06">
+                <img id="image07"src="p_22_03_apartment_01.png" alt="image07">
             </div>
         </div>
 
         <!-- Modal box -->
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <img src="home01.GIF" alt="home image">
-                <span class="close">&times;</span>
-                <h1 class="text">adadsadad</h1>
+        <div class="modal01" id="modal01">
+            <div class="modal01-content">
+                <!--<img src="home01.GIF" alt="image01">-->
+                <span class="close01">&times;</span>
+                <h1 class="text">오피스카소는 한국을 기반으로 하는 디자인—리서치 오피스입니다. 우리는 평범한, 매일의 삶에 의문을 가지고 디자인합니다. 무심하게 지나쳤던 주변의 생명들, 사물들, 풍경과 환경에 관심을 가지고 인식하여 좀 더 세밀하게 주변과 관계맺을 수 있는 방식을 고민합니다.
+<br><br>
+Office Kaso is a design research office based in South Korea. We question and design the ordinary aspects of everyday life. We are interested in observing and discovering all life forms, things, scenery, and environments around us, and we try to think delicately about how to coexist with them.</h1>
             </div>
         </div>
 
-        <div class="modal_second" id="modal_second">
-            <div class="modal_second-content">
-                <img src="p_16_01_shinheung_01.JPG" alt="second image">
-                <span class="close_second">&times;</span>
+        <div class="modal02" id="modal02">
+            <div class="modal02-content">
+                <img src="p_16_01_shinheung_01.JPG" alt="image02">
+                <span class="close02">&times;</span>
             </div>
         </div>
 
-        <!-- <div class="modal_second" id="modal_second">
-          <div class="modal_second-content">
-              <img src="p_16_01_shinheung_01.JPG" alt="second image">
-              <span class="close_second">&times;</span>
-          </div>
-      </div> -->
+<div class="modal03" id="modal03">
+            <div class="modal03-content">
+                <img src="p_16_02_shinheung_02.JPG" alt="image03">
+                <span class="close03">&times;</span>
+            </div>
+        </div>
+
+<div class="modal04" id="modal04">
+            <div class="modal04-content">
+                <img src="p_23_01_birdwatching_01.png" alt="image04">
+                <span class="close04">&times;</span>
+            </div>
+        </div>
+
+<div class="modal05" id="modal05">
+            <div class="modal05-content">
+                <img src="p_22_01_greenroomhouse_01.png" alt="image05">
+                <span class="close05">&times;</span>
+            </div>
+        </div>
+
+<div class="modal06" id="modal06">
+            <div class="modal06-content">
+                <img src="p_22_02_jeju_01.png" alt="image06">
+                <span class="close06">&times;</span>
+            </div>
+        </div>
+
+<div class="modal07" id="modal07">
+            <div class="modal07-content">
+                <img src="p_22_03_apartment_01.png" alt="image07">
+                <span class="close07">&times;</span>
+            </div>
+        </div>
+
+        
 </body>
 
 <script>
@@ -138,13 +170,13 @@
 
             if (explanation.classList.contains('open')) {
                 if (index === 0) {
-                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="greenroomhouse"]'));
+                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="image05"]'));
                 } else if (index === 1) {
-                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="jeju01"]'));
+                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="image06"]'));
                 } else if (index === 2) {
-                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="birdwatching01"],img[alt="shinheung02"]'));
+                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="image04"],img[alt="image03"]'));
                 } else if (index === 3) {
-                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="apartment01"]'));
+                    imagesToSort = Array.from(section2.querySelectorAll('img[alt="image07"]'));
                 }
 
                 // Fade out non-relevant images
@@ -193,53 +225,145 @@
 
 
     // ---------모달처리------------
-    const homeImage = document.getElementById('home-image');
-    const modal = document.getElementById('modal');
-    const modalContent = document.querySelector('.modal-content');
-    const closeBtn = document.querySelector('.close');
+    const image01 = document.getElementById('image01');
+    const modal01 = document.getElementById('modal01');
+    const modal01_content = document.querySelector('.modal01-content');
+    const closeBtn01 = document.querySelector('.close01');
+
+    const image02 = document.getElementById('image02');
+    const modal02 = document.getElementById('modal02');
+    const modal02_content = document.querySelector('.modal02-content');
+    const closeBtn02 = document.querySelector('.close02');
+
+    const image03 = document.getElementById('image03');
+    const modal03 = document.getElementById('modal03');
+    const modal03_content = document.querySelector('.modal03-content');
+    const closeBtn03 = document.querySelector('.close03');
+
+    const image04 = document.getElementById('image04');
+    const modal04 = document.getElementById('modal04');
+    const modal04_content = document.querySelector('.modal04-content');
+    const closeBtn04 = document.querySelector('.close04');
+
+    const image05 = document.getElementById('image05');
+    const modal05 = document.getElementById('modal05');
+    const modal05_content = document.querySelector('.modal05-content');
+    const closeBtn05 = document.querySelector('.close05');
+
+    const image06 = document.getElementById('image06');
+    const modal06 = document.getElementById('modal06');
+    const modal06_content = document.querySelector('.modal06-content');
+    const closeBtn06 = document.querySelector('.close06');
+
+    const image07 = document.getElementById('image07');
+    const modal07 = document.getElementById('modal07');
+    const modal07_content = document.querySelector('.modal07-content');
+    const closeBtn07 = document.querySelector('.close07');
 
 
-    const secondImage = document.getElementById('second-image');
-    const modal_second = document.getElementById('modal_second');
-    const modal_second_content = document.querySelector('.modal_second-content');
-    const closeBtn_second = document.querySelector('.close_second');
-
-
-
-    // Add event listener to home image
-    homeImage.addEventListener('click', function() {
-        modal.style.display = 'block';
-        modalContent.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    image01.addEventListener('click', function() {
+        modal01.style.display = 'block';
+        modal01_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
     });
 
-    // Add event listener to close button
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
+    closeBtn01.addEventListener('click', function() {
+        modal01.style.display = 'none';
     });
 
-    // Add event listener to close modal when clicking outside of the modal content
     window.addEventListener('click', function(event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            modal01.style.display = 'none';
         }
     });
 
 
-    // Add event listener to home image
-    secondImage.addEventListener('click', function() {
-        modal_second.style.display = 'block';
-        modal_second_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    image02.addEventListener('click', function() {
+        modal02.style.display = 'block';
+        modal02_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
     });
 
-    // Add event listener to close button
-    closeBtn_second.addEventListener('click', function() {
-        modal_second.style.display = 'none';
+    closeBtn02.addEventListener('click', function() {
+        modal02.style.display = 'none';
     });
 
-    // Add event listener to close modal when clicking outside of the modal content
     window.addEventListener('click', function(event) {
-        if (event.target == modal_second) {
-            modal_second.style.display = 'none';
+        if (event.target == modal) {
+            modal02.style.display = 'none';
+        }
+    });
+
+  image03.addEventListener('click', function() {
+        modal03.style.display = 'block';
+        modal03_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    });
+
+    closeBtn03.addEventListener('click', function() {
+        modal03.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal03.style.display = 'none';
+        }
+    });
+
+  image04.addEventListener('click', function() {
+        modal04.style.display = 'block';
+        modal04_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    });
+
+    closeBtn04.addEventListener('click', function() {
+        modal04.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal04.style.display = 'none';
+        }
+    });
+
+  image05.addEventListener('click', function() {
+        modal05.style.display = 'block';
+        modal05_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    });
+
+    closeBtn05.addEventListener('click', function() {
+        modal05.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal05.style.display = 'none';
+        }
+    });
+
+  image06.addEventListener('click', function() {
+        modal06.style.display = 'block';
+        modal06_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    });
+
+    closeBtn06.addEventListener('click', function() {
+        modal06.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal06.style.display = 'none';
+        }
+    });
+
+  image07.addEventListener('click', function() {
+        modal07.style.display = 'block';
+        modal07_content.style.height = window.innerHeight * 0.8 + 'px'; // Set modal height to 80% of window height
+    });
+
+    closeBtn07.addEventListener('click', function() {
+        modal07.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal07.style.display = 'none';
         }
     });
 </script>
