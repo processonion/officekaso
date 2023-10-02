@@ -85,19 +85,19 @@ div {
 }
 
 .question-container {
-    
+
     margin-right: 10px;
     position: relative;
     background-color: white;
     border: 1px solid black;
     position: relative;
-    margin-bottom: -20px;
+       
 }
 
 .question-container:before {
     content: "";
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     right: 0;
     width: 0;
     height: 0;
@@ -128,6 +128,7 @@ div {
     word-break: break-all;
     font-size: 20px;
     transition: all 0.5s ease-in-out;
+    margin-bottom:10px;
 }
 
 .explanation.open {
@@ -136,7 +137,7 @@ div {
     /* auto 불가능 */
 }
 
-.modal {
+.modal01 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -149,7 +150,7 @@ div {
     border: 1px solid black;
 }
 
-.modal-content {
+.modal01-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -165,13 +166,13 @@ div {
     border: 1px solid black;
 }
 
-.modal-content img {
+.modal01-content img {
     width: 100%;
     height: 80%;
     object-fit: contain;
 }
 
-.close {
+.close01 {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -181,14 +182,14 @@ div {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close01:hover,
+.close01:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal_second {
+.modal02 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -201,7 +202,7 @@ div {
     border: 1px solid black;
 }
 
-.modal_second-content {
+.modal02-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -217,13 +218,13 @@ div {
     border: 1px solid black;
 }
 
-.modal_second-content img {
+.modal02-content img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.close_second {
+.close02 {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -233,13 +234,276 @@ div {
     cursor: pointer;
 }
 
-.close_second:hover,
-.close_second:focus {
+.close02:hover,
+.close02:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal03 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+.modal03-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 800px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.modal03-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close03 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}
+
+.close03:hover,
+.close03:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal04 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+.modal04-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 800px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.modal04-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close04 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}
+
+.close04:hover,
+.close04:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal05 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+.modal05-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 800px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.modal05-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close05 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}
+
+.close05:hover,
+.close05:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal06 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+.modal06-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 800px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.modal06-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close06 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}
+
+.close06:hover,
+.close06:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal07 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+.modal07-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 800px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.modal07-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close07 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}
+
+.close07:hover,
+.close07:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
 
 .text {
-    color: red;
+      box-sizing: border-box;
+    
+    font-size: 20px;
 }
